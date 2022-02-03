@@ -60,7 +60,7 @@ export default {
           //Show success alert
           this.flashMessage.show({
             status: "success",
-            title: "Login success",
+            title: "Hi there",
             message: "Welcome back :)",
           });
         })
