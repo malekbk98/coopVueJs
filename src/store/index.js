@@ -10,11 +10,11 @@ const vuexLocal = new VuexPersistence({
 export default new Vuex.Store({
   plugins: [vuexLocal.plugin],
   state: {
-    token: "",
+    token: null,
     member: null,
   },
   mutations: {
-    setToken(state, token){
+    setToken(state, token) {
       state.token = token;
     },
     setMember(state, member) {

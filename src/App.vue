@@ -9,7 +9,17 @@
 import NavBar from "./components/NavBar.vue";
 export default {
   mounted() {
-    if (!this.$store.state.token) {
+    //Check if user logged in
+    if (this.$store.state.member) {
+      this.$api
+        .get("members/" + this.$store.state.member.id + "/signedin")
+        .then()
+        .catch(() => {
+          this.$store.commit("setToken", null);
+          this.$store.commit("setMember", null);
+          this.$router.push("/login");
+        });
+    } else {
       this.$router.push("/login");
     }
   },

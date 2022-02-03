@@ -39,6 +39,7 @@
               <button
                 class="btn btn-danger btn-sm m-2"
                 @click="deleteMember(m.id)"
+                :disabled="m.id == $store.state.member.id"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
