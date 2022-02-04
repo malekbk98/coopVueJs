@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import store from '../store/index.js'
 
 Vue.use(VueRouter)
 
@@ -38,5 +39,14 @@ const routes = [
 const router = new VueRouter({
   routes
 })
+
+//Control routes in case no connected user
+router.beforeEach((to, from, next) => {
+  if (to.name !== 'Login' && to.name !== 'Create Account' && !store.state.token) {
+    next({ name: 'Login' });
+  } else {
+    next();
+  }
+});
 
 export default router
