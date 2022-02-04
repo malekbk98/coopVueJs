@@ -1,5 +1,11 @@
 # coop
 
+## Description
+This project was developed for the "LP CIASIE : Dev. Applications Web / Client" module during the academic year 2021/2022.
+
+## Owner
+Malek Ben Khalifa
+
 ## Project setup
 ```
 npm install
@@ -15,5 +21,3 @@ npm run serve
 npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
