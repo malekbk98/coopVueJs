@@ -6,6 +6,10 @@ This project was developed for the "LP CIASIE : Dev. Applications Web / Client" 
 ## Owner
 Malek Ben Khalifa
 
+## Live demo
+```
+https://coop-2022-malek-ben-khalifa.netlify.app/
+```
 ## Project setup
 ```
 npm install
