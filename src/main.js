@@ -18,6 +18,9 @@ Vue.mixin(Tools);
 //Bootstrap
 Vue.use(BootstrapVue);
 
+//Use Bus
+Vue.prototype.$bus = new Vue();
+
 //Axios
 Vue.prototype.$api = axios.create({
   baseURL: 'https://allweb.fun/coop/api',
