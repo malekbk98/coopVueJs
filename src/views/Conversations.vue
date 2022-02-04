@@ -62,7 +62,13 @@
             />
           </div>
           <div class="mt-2 text-right">
-            <button class="btn btn-danger" @click="addConversation">Add</button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              @click="addConversation"
+            >
+              Add
+            </button>
           </div>
         </form>
       </b-modal>
@@ -123,7 +129,12 @@ export default {
           this.conversations = response.data;
         })
         .catch((error) => {
-          alert(error.response.data.message);
+          //Show error alert
+          this.flashMessage.show({
+            status: "error",
+            title: "Something went wrong :(",
+            message: error.response.data.message,
+          });
         });
     },
   },

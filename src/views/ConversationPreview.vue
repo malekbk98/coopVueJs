@@ -122,7 +122,12 @@
           </textarea>
         </div>
         <div class="mt-2">
-          <button class="btn btn-danger" @click="addMessage">
+          <button
+            type="button"
+            :disabled="!message"
+            class="btn btn-danger"
+            @click="addMessage"
+          >
             Send
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -154,7 +159,12 @@
             </textarea>
           </div>
           <div class="mt-2">
-            <button class="btn btn-danger" @click="editMessage()">
+            <button
+              type="button"
+              :disabled="!editMsg"
+              class="btn btn-danger"
+              @click="editMessage()"
+            >
               Update
             </button>
           </div>
@@ -185,7 +195,12 @@
             />
           </div>
           <div class="mt-2">
-            <button type="button" class="btn btn-danger" @click="editConv()">
+            <button
+              type="button"
+              :disabled="!editLabel || !editTopic"
+              class="btn btn-danger"
+              @click="editConv()"
+            >
               Update
             </button>
           </div>

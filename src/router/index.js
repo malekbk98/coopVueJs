@@ -44,6 +44,7 @@ const router = new VueRouter({
 router.beforeEach((to, from, next) => {
   if (to.name !== 'Login' && to.name !== 'Create Account' && !store.state.token) {
     next({ name: 'Login' });
+    alert('Please connect!')
   } else {
     next();
   }

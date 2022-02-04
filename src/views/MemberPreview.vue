@@ -19,7 +19,11 @@
 
         <!--Display found messages-->
         <template v-if="messages[0] && messages[0].length > 0">
-          <div class="col-sm-12 mb-3" v-for="m in messages[0]" :key="m.id">
+          <div
+            class="col-sm-12 mb-3"
+            v-for="m in messages[0].slice(0, 10)"
+            :key="m.id"
+          >
             <div class="card bg-dark text-light">
               <router-link :to="'/conversation/' + m.channel_id">
                 <h5 class="card-header bg-danger text-light">
@@ -36,6 +40,7 @@
                   >
                     <button
                       class="btn btn-secondary"
+                      type="button"
                       @click="
                         editMsg = m.message;
                         editMsgId = m.id;
@@ -59,7 +64,11 @@
                         />
                       </svg>
                     </button>
-                    <button class="btn btn-danger" @click="deleteMessage(m.id)">
+                    <button
+                      type="button"
+                      class="btn btn-danger"
+                      @click="deleteMessage(m.id)"
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
@@ -85,7 +94,7 @@
         <EmptyCom v-else msg="messages" />
       </div>
 
-      <!-- Modal -->
+      <!-- Edit Modal -->
       <b-modal id="editModal" title="Edit a message" hide-footer>
         <form>
           <div class="mt-2">
@@ -99,7 +108,12 @@
             </textarea>
           </div>
           <div class="mt-2">
-            <button class="btn btn-danger" @click="editMessage()">
+            <button
+              type="button"
+              :disabled="!editMsg"
+              class="btn btn-danger"
+              @click="editMessage()"
+            >
               Update
             </button>
           </div>
@@ -267,3 +281,9 @@ export default {
   },
 };
 </script>
+<style lang="scss">
+a {
+  text-decoration: none;
+  color: black;
+}
+</style>
